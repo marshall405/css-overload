@@ -1,0 +1,24 @@
+//- signup.pug
+doctype html
+html
+    include includes/head.pug
+    link(rel="stylesheet", href="/styles/signup.css")
+    body
+        include includes/header.pug
+        div(class="container")
+            <div class=form-container>
+                if error
+                    h2.red #{error}
+                h1 Sign Up
+                <form method=POST action=/signup enctype=multipart/form-data>
+                    <input class=input name=username type=text placeholder=username required value=#{username}>
+                    <input class=input name=email type=email placeholder=email required value=#{email}>
+                    div.passwords 
+                        <input class=input name=password type=password placeholder=password required value=#{password}>
+                        <input class=input name=password_confirmation type=password placeholder="confirm password" required value=#{password_confirmation}>
+                    <input class=submit type=submit value="sign up">
+                </form>
+                
+                h4 Already have an account? 
+                    a(href="/login") login
+            </div>

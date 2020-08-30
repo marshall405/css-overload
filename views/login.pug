@@ -1,0 +1,24 @@
+//- login.pug
+doctype html
+html
+    include includes/head.pug
+    body
+        include includes/header.pug
+        div(class="container")
+            <div class=form-container>
+                h1 Login
+                
+                <form method=POST action=/login enctype=multipart/form-data>
+                    <input class=input name=username type=text placeholder=username>
+                    <input class=input name=password type=password placeholder=password>
+                    
+                    <input class=submit type=submit value="sign in">
+                </form>
+                
+                h4 Don't have an account? 
+                    a(href="/signup") sign up
+
+                if error
+                    h2.red #{error}
+            </div>
+

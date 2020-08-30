@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Gayathri&display=swap');
+
+nav {
+    background: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 60px;
+    box-shadow: 0px 1px 2px var(--primary-color); 
+    z-index: 2;
+}
+
+nav h1.logo {
+    color: #FFF;
+    background: var(--primary-color);
+    transition: transform .25s ease-out;
+}
+
+nav h1.logo:hover {
+    cursor: pointer;
+    background: var(--primary-color-hover);
+    transform: rotate(360deg);
+}
+
+
+/* CARET DOWN  */
+.icon:hover {
+    background: var(--primary-color-hover);
+    cursor: pointer;
+}
+.round{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px; 
+    padding: 20px;
+}
+ .white {
+    color: #FFF;
+ }
+ .green {
+     color: var(--primary-color);
+ }
+ .bg-green {
+     background: var(--primary-color);
+ }
+ .bg-light-green {
+     background: var(--primary-color-hover);
+ }
+ .rotate {
+     transform: rotate(180deg);
+     transition: transform .25s ease-out;
+ }
+ .fas {
+     transition: all .25s ease-out;
+ }
+
+
+/* Nav Links */
+nav ul {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+}
+
+nav ul li {
+    margin: 5px;
+}
+
+nav ul li a {
+    color: var(--secondary-color-hover);
+}
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* ACCOUNT SETTINGS  */
+
+.account {
+    z-index: 2;
+    font-family: 'Gayathri', sans-serif;
+    width: 0px;
+    height: 0px;
+    position: fixed;
+    background: var(--primary-color);
+    color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    top: -300px;
+    right: -300px;
+    transition: all .25s ease-out;
+    box-shadow: 0px 0px 2px black;
+    pointer-events: none;
+
+}
+.account h3 {
+    margin: 1rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.226);
+}
+
+.account p {
+    font-size: .7em;
+    letter-spacing: 2px;
+}
+.show {
+    pointer-events: all;
+    height: 300px;
+    width: 300px;
+    right: 28px;
+    top: 60px;
+    transform: rotate(360deg);
+}

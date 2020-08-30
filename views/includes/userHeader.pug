@@ -1,0 +1,16 @@
+//- includes userHeader.pug
+
+nav 
+    h1(class="logo round"): a(href="/dashboard") P
+    div(class="icon round bg-green", id="caret-down-div") 
+        i(class="fas fa-caret-down fa-2x white", id="caret-down")
+    div(class="account", id="account-drop-down")
+        p USERNAME
+        h3= user.username
+        br
+        p EMAIL
+        h3= user.email
+        br
+        ul 
+            li: a(href="/logout") Logout
+        
