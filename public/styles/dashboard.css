@@ -1,10 +1,14 @@
 .main-container {
+    position: absolute;
+    left: 0;
+    right: 0;
     height: calc(100vh - 60px);
     max-width: 900px;
-    margin: 0px auto;
+    width: 100%;
+    margin: auto;
     z-index: 0;
+    margin-top: 60px;
 }
-
 
 .overlay {
     z-index: 1;
@@ -16,31 +20,118 @@
     height: 100%;
     transition: all .25s ease-out;
     pointer-events: none;
+    background: rgba(255, 255, 255, 0.705);
 }
+
 .show-overlay{
     opacity: 1;
     pointer-events: all;
 }
 
+
+/* ADD TRIP */
+
+.add-trip-container {
+    padding: 10px;
+    text-align: center;
+}
+
+.add-trip-container button {
+    font-family: sans-serif;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    cursor: pointer;
+    color: #FFF;
+    width: 30%;
+    outline: none;
+}
+.add-trip-container button:hover {
+    background: var(--primary-color-hover)
+}
+
+
 .trips-container {
+    margin: 0 auto;
+    width: 90%;
+    /* height: 100%; */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 500px;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-evenly;
+}
+
+.trip {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+    min-width: 300px;
+    max-width: 800px;
+    max-height: 600px;
     transition: transform .35s ease-out;
-    transform: rotateY(0deg)
+    transform: rotateY(0deg);
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.486);
+    border-radius: 5px;
+    margin: 20px;
+    cursor: pointer;
 }
 .front {
+    padding: 0px;
     opacity: 0;
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: opacity .25s ease-out;
+    background: var(--primary-color);
+}
+.front h3 {
+    padding: 10px;
+    text-align: center;
+    background: var(--primary-color);
+    color: #FFF;
+    width: 100%;
+}
+.front img {
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+   
+}
+
+.front .view {
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+}
+.front .view span {
+    font-size: 3em;
 }
 .back {
-    opacity: 0;
+    padding: 5px;
+    display: none;
+    width: 100%;
+    height: 100%;
     position: absolute;
+    overflow: scroll;
+    opacity: 0;
     transition: opacity .25s ease-out;
     transform: rotateY(180deg);
+}
+.back h3{
+    margin: .5em 3em;
+}
+.back p {
+    margin: 3em;
+}
+.display-back {
+   display: block;
 }
 .opacity {
     opacity: 1;
@@ -49,4 +140,6 @@
 .flip {
     transform: rotateY(180deg);
 }
+
+
 

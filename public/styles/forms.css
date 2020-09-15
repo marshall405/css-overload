@@ -30,7 +30,8 @@
 .form-container form input {
     padding: 5px;
     margin: 5px;
-    border: none;    
+    border: none;
+    border-radius: 0;  
 }
 .form-container form input.input {
     border-bottom: 1px solid var(--primary-color);

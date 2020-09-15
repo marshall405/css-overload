@@ -19,7 +19,9 @@ a {
 html {
     font-family: sans-serif;
 }
-
+body, html {
+    position: relative;
+}
 .container {
     margin: 30px auto;
     width: 90%;
@@ -30,6 +32,10 @@ h1 {
 }
 
 .red {
-    text-align: center;
+    text-align: center; 
     color: red;
+}
+
+button {
+    transition: all .15s ease-in;
 }

@@ -32,3 +32,10 @@ nav ul li a:hover {
 nav ul li.divider {
     color: var(--primary-color);
 }
+
+
+@media only screen and (device-width: 414px)  {
+   nav h1.logo {
+       
+   }
+}

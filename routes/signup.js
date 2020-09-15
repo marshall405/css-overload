@@ -43,7 +43,8 @@ router.post('/', async (req, res) => {
     try {
         //save new user
         const saved = await user.save()
-        req.session.username = saved.username
+
+        req.session.user = saved
         res.redirect("/dashboard")
     } catch (err) {
         userData.error = err.details[0].message

@@ -4,18 +4,59 @@ html
     include includes/userHead.pug
     body
         include includes/userHeader.pug
+        //- Overlay when Account Settings are dropped down
         div(class="overlay", id="overlay")
-        div(class="main-container")
-            div(class="trips-container", id="trips")
-                div(class="front opacity", id="front")
-                    h3 Trips
-                    p 
-                div(class="back", id="back")
-                    h3 More Info
-                    p This is the back side of this card
-                    p maybe this will work
-                    p we just add or remove a show class??
 
+
+        div(class="main-container")
+            div(class="add-trip-container")
+                button(id="addTrip") New 
+                    span(class="fas fa-plus")
+                
+            div(class="trips-container", id="trips")
+                if trips.length > 0
+                    each trip in trips
+                        div.trip 
+                            div(class="front opacity")
+                                h3= trip.location
+                                if trip.image.filename
+                                    img(src=`/data/uploads/${trip.image.filename || 'default'}`)
+                                else 
+                                    div.view
+                                        <span class="view fas fa-camera-retro"></span>
+
+                            div(class="back")
+                                h3 About your trip to <span class="green"> #{trip.location}<span>
+                                p= trip.post
+                else
+                    div(class="no-trips-message")
+                        h3.red You have 0 trips, start adding some now!
+                 
+                //- div.trip 
+                //-     div(class="front opacity")
+                //-         h3 Trips
+                //-         img(src="/data/uploads/7524502ffbf37173141258fed7de01d5")
+
+                //-     div(class="back")
+                //-         h3 More Info
+                //-         p This is the back side of this card
+                //-         p maybe this will work
+                //-         p we just add or remove a show class??
+            
+        div(id="addModal", class="add-modal-container")
+            div(class="new-trip-form form-container")
+                span(id="closeModal", class="fas fa-times close-modal fa-3x")
+                h3 Let's hear about it!
+                form(method="POST", action="/dashboard/trips", enctype="multipart/form-data") 
+                    <input name="location" required placeholder="Where did you go? Somewhere, USA" />
+                    <textarea id=tripTextarea maxlength=3000 name=post required cols=10 rows=10 placeholder="What did you do..."></textarea>
+                    span(id="textAreaLength", class="span-text-length") 3000 characters remaining 
+                    h4 Have a picture? Upload it!
+                    div(class="file-container")
+                        input(type="file", id="upload", accept="image/png, image/jpeg", name="image")
+                    div(class="form-actions") 
+                        button(type="submit") send it
+                        button(id="cancelAdd") nevermind
 
            
             

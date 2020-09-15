@@ -1,0 +1,183 @@
+.add-modal-container {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background: var(--primary-color);
+    width: 100vw;
+    height: 0;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: scroll;
+}
+.show-add-modal {
+    height: calc(100% - 60px);
+    opacity: 1;
+}
+
+/* close icon for modal - upper right corner */
+.close-modal {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    opacity: 0;
+    transition: transform .25s ease-in-out, opacity 1s ease-in-out;
+    color: var(--secondary-color);
+}
+.close-opacity {
+    opacity: 1;
+}
+.close-modal:hover {
+    color: var(--secondary-color-hover);
+}
+
+.close-modal-rotate {
+    transform: rotate(180deg);
+}
+
+
+/*  IMAGE UPLOAD */
+
+.file-container {
+    position: relative;
+}
+.file-container label {
+    color: #FFF;
+    position: absolute;
+    top: 19px;
+    left: -15px;
+    background: var(--primary-color);
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.new-trip-form label:hover {
+    cursor: pointer;
+
+}
+.new-trip-form form h4 {
+    margin: 15px 0px 0px 0px;
+}
+.new-trip-form form input[type=file]{
+    cursor: pointer;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.new-trip-form h3 {
+    font-size: 1.5em;
+}
+.new-trip-form {
+    position: relative;
+    background: #FFF;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 900px;
+    height: 90%;
+    box-shadow: 0px 0px 13px black;
+}
+.new-trip-form h3 {
+    width: 100%;
+    text-align: left;
+}
+.new-trip-form input, .new-trip-form textarea {
+    margin: 5px auto 5px auto;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 0;  
+    border-bottom: 1px solid var(--primary-color);
+    
+}
+.new-trip-form form {
+    width: 100%;
+    height: 100%;
+}
+.new-trip-form input:focus, .new-trip-form textarea:focus {
+    outline-width: 0; 
+}
+.new-trip-form form textarea {
+    flex-grow: 2; 
+    /* height: 60%; */
+}
+
+.new-trip-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-evenly;
+}
+.form-actions button {
+    padding: 5px 15px;
+    margin: 15px;
+    color: #fff;
+    font-size: 1.1em;
+    border-radius: 5px;
+    background: var(--primary-color);
+    border: none;
+}
+.form-actions button:hover {
+    cursor: pointer;
+    background: var(--primary-color-hover)
+}   
+
+.span-text-length {
+    font-size: 10px;
+
+}
+
+
+/* @media (max-width: 375px)  {
+   
+    .new-trip-form span.close-modal {
+        font-size:22px;
+    }
+    .new-trip-form h3 {
+        font-size: 1em;
+    }
+    .new-trip-form textarea {
+        height: auto;
+    }
+    .new-trip-form form .form-actions {
+        font-size: .7em;
+    }
+}
+
+@media (max-width: 475px) and (min-width: 300px) {
+    .new-trip-form h3 {
+        margin: 2px 0px;
+
+    }
+    .new-trip-form{
+        padding: 5px;
+    }
+    .new-trip-form form {
+        margin: 0;
+    }
+    .file-container {
+        margin: 0px;
+    }
+    .new-trip-form h4 {
+        margin: 2px 0px 0px 0px;
+        font-size: 12px;
+    }
+    .new-trip-form .file-container input[type=file] {
+        margin: 0px;
+    }
+}
+
+@media (max-width: 475px) and (min-width: 375px) {
+    .new-trip-form span.close-modal {
+        font-size: 28px;
+    }
+   
+} */

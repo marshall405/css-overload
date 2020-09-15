@@ -1,7 +1,8 @@
 const express = require('express')
 const cookieSession = require('cookie-session')
 const multer = require('multer')
-const upload = multer()
+const upload = multer({ dest: "./public/data/uploads/" })
+
 const path = require('path')
 const app = express()
 const mongoose = require('mongoose')
@@ -23,16 +24,17 @@ app.use(cookieSession({
     keys: ['super_secret_key'],
     maxAge: 24 * 60 * 60 * 1000 //24 hours
 })) // use cookie for user auth
+
 app.use(express.json()) // parses the request body
-app.use(upload.array()) // parses form data 
+app.use(upload.single("image")) // parses form data 
 
 /*          End of Middleware       */
-
 
 function checkUserSignedIn(req, res, next) {
     if (req.session.user) { return res.redirect('/dashboard') }
     next()
 }
+
 // IMPORT ROUTES
 app.get('/', checkUserSignedIn, (req, res) => {
     res.render('index')

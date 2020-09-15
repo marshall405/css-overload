@@ -18,8 +18,7 @@ const UserSchema = new mongoose.Schema({
         required: true,
         minlength: 6,
         maxlength: 255
-    },
-    trips: []
+    }
 })
 
 
